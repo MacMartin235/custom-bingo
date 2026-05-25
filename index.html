@@ -178,11 +178,14 @@
 			
 			let grid = document.getElementById('grid').children;
 			let filledGrid = [];
+			let exesGrid = [];
 			for(let child of grid){
 				filledGrid.push(child.innerText);
+				exesGrid.push( child.classList.contains('checked') );
 			}
-			console.log(filledGrid);
+			console.log(filledGrid, exesGrid);
 			localStorage.setItem('savedGrid',JSON.stringify(filledGrid));
+			localStorage.setItem('savedChecks',JSON.stringify(exesGrid));
 		}
 		function loadGrid(){
 			if( typeof(Storage) === 'undefined' ){
@@ -190,12 +193,19 @@
 				return;
 			}
 			
+			let grid = document.getElementById('grid').children;
 			if( localStorage.getItem('savedGrid') !== null ){
 				let filledGrid = JSON.parse(localStorage.getItem('savedGrid'));
-				let grid = document.getElementById('grid').children;
 				
 				for(let i=0, j=0; i < grid.length && j < filledGrid.length; i++, j++){
 					grid[i].innerHTML = filledGrid[j];
+				}
+			}
+			if( localStorage.getItem('savedChecks') !== null ){
+				let exesGrid = JSON.parse(localStorage.getItem('savedChecks'));
+				
+				for(let i=0, j=0; i < grid.length && j < exesGrid.length; i++, j++){
+					exesGrid[j] ? grid[i].classList.add('checked') : grid[i].classList.remove('checked');
 				}
 			}
 		}
