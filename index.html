@@ -24,13 +24,13 @@
 				max-width: 100px;
 				aspect-ratio: 1 / 1;
 				position: relative;
+				display: flex;
+				justify-content: center;
+				align-items: center;
 				
 				&[contenteditable="false"]{
 					cursor: pointer;
 				}
-			}
-			.edited{
-				background-color: rgba(255, 0, 0, 10%);
 			}
 			.checked:after{
 				--b: 75%; /* thickness */
@@ -41,58 +41,86 @@
 				position: absolute;
 				top: 0;
 				left: 0;
-				display: block;
+				//display: block;
 				height: 100%;
 				aspect-ratio: 1;
 				border-radius: 50%;
 				box-sizing: border-box;
 				--g:conic-gradient(var(--c) 0 0) no-repeat 50%/;
-				background: 
-				var(--g) var(--b) calc(100% - 2*var(--s)),
-				var(--g) calc(100% - 2*var(--s)) var(--b);
-				rotate: 45deg;
+				//background: 
+				//	var(--g) var(--b) calc(100% - 2*var(--s)),
+				//	var(--g) calc(100% - 2*var(--s)) var(--b);
+				//rotate: 45deg;
+				background-size: 100%;
+				filter: opacity(50%);
+			}
+			.edited{
+				background-color: rgba(255, 0, 0, 10%);
+			}
+			.soldiers .checked:after{
+				background-image: url("Emblem_Soldiers.png");
+			}
+			.soldiers .edited{
+				background-color: rgba(0, 0, 255, 10%);
+			}
+			.seekers .checked:after{
+				background-image: url("Emblem_Seekers.png");
+			}
+			.seekers .edited{
+				background-color: rgba(0, 255, 0, 10%);
+			}
+			.schemers .checked:after{
+				background-image: url("Emblem_Schemers.png");
+			}
+			.schemers .edited{
+				background-color: rgba(255, 0, 0, 10%);
 			}
 			
 		</style>
 	</head>
 	<body>
-		<div id="grid">
-			<div class="square" contenteditable oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
-			<div class="square" contenteditable oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
-			<div class="square" contenteditable oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
-			<div class="square" contenteditable oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
-			<div class="square" contenteditable oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
-			<div class="square" contenteditable oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
-			<div class="square" contenteditable oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
-			<div class="square" contenteditable oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
-			<div class="square" contenteditable oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
-			<div class="square" contenteditable oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
-			<div class="square" contenteditable oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
-			<div class="square" contenteditable oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
-			<div class="square" contenteditable oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
-			<div class="square" contenteditable oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
-			<div class="square" contenteditable oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
-			<div class="square" contenteditable oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
-			<div class="square" contenteditable oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
-			<div class="square" contenteditable oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
-			<div class="square" contenteditable oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
-			<div class="square" contenteditable oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
-			<div class="square" contenteditable oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
-			<div class="square" contenteditable oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
-			<div class="square" contenteditable oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
-			<div class="square" contenteditable oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
-			<div class="square" contenteditable oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
+		<div id="grid" class="schemers">
+			<div class="square" contenteditable spellcheck="false" oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
+			<div class="square" contenteditable spellcheck="false" oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
+			<div class="square" contenteditable spellcheck="false" oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
+			<div class="square" contenteditable spellcheck="false" oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
+			<div class="square" contenteditable spellcheck="false" oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
+			<div class="square" contenteditable spellcheck="false" oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
+			<div class="square" contenteditable spellcheck="false" oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
+			<div class="square" contenteditable spellcheck="false" oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
+			<div class="square" contenteditable spellcheck="false" oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
+			<div class="square" contenteditable spellcheck="false" oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
+			<div class="square" contenteditable spellcheck="false" oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
+			<div class="square" contenteditable spellcheck="false" oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
+			<div class="square" contenteditable spellcheck="false" oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
+			<div class="square" contenteditable spellcheck="false" oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
+			<div class="square" contenteditable spellcheck="false" oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
+			<div class="square" contenteditable spellcheck="false" oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
+			<div class="square" contenteditable spellcheck="false" oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
+			<div class="square" contenteditable spellcheck="false" oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
+			<div class="square" contenteditable spellcheck="false" oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
+			<div class="square" contenteditable spellcheck="false" oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
+			<div class="square" contenteditable spellcheck="false" oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
+			<div class="square" contenteditable spellcheck="false" oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
+			<div class="square" contenteditable spellcheck="false" oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
+			<div class="square" contenteditable spellcheck="false" oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
+			<div class="square" contenteditable spellcheck="false" oninput="if(this.innerText.trim().length > 0){ this.classList.add('edited');} else{ this.classList.remove('edited');}" onclick="if(this.contentEditable !== 'true'){this.classList.toggle('checked')};"></div>
 		</div>
 		<div id="buttons">
 			<button onclick="randomize();">Randomize</button>
 			<button onclick="clearAll();">Clear All</button>
 			<button onclick="clearSome();">Clear Marks and Randomized Squares</button>
-			<input type="checkbox" checked onchange="toggleEditable(this.checked);"><label>Editable</label>
+			<input type="checkbox" id="editableCheck" checked onchange="toggleEditable(this.checked); localStorage.setItem('editable',this.checked);"><label>Editable</label>
 			<button onclick="saveGrid();">Save Grid</button>
 			<button onclick="loadGrid();">Load Grid</button>
+			<fieldset id="icontype">
+				<label><input type="radio" name="table" value="soldiers" onchange="let grid = document.getElementById('grid'); grid.className = 'soldiers'; localStorage.setItem('icontype','soldiers');">Soldiers</label>
+				<label><input type="radio" name="table" value="seekers" onchange="let grid = document.getElementById('grid'); grid.className = 'seekers'; localStorage.setItem('icontype','seekers');">Seekers</label>
+				<label><input type="radio" name="table" value="schemers" checked onchange="let grid = document.getElementById('grid'); grid.className = 'schemers'; localStorage.setItem('icontype','schemers');">Schemers</label>
+			</fieldset>
 		</div>
 		<div id="words">
-			<textarea id="wordlist" rows="30" cols="30">
+			<textarea id="wordlist" rows="30" cols="30" spellcheck="false">
 NAT 20
 NAT 1
 Seekers Cold Open
@@ -119,6 +147,25 @@ Einfasen Shenanigans
 		</div>
 	</body>
 	<script>
+		var isDirty = function() {
+			return false; //add checker for changes made
+		}
+		window.addEventListener('beforeunload', function(e) {
+			if( !isDirty() ){
+				return undefined;
+			}
+			
+			var confirmationMessage = 'You\'ve made some changes. If you leave without saving, your changes will be lost.';
+			
+			(e || window.event).returnValue = confirmationMessage;
+			return confirmationMessage;
+		});
+		
+		document.querySelector('#icontype input[value="' + localStorage.getItem('icontype') + '"]').checked = true;
+		document.getElementById('grid').className = localStorage.getItem('icontype');
+		document.getElementById('editableCheck').checked = localStorage.getItem('editable') == 'true';
+		toggleEditable(localStorage.getItem('editable') == 'true');
+		
 		function randomize(){
 			let grid = document.getElementById('grid').children;
 			let words = document.getElementById('wordlist').value.trim().split('\n');
